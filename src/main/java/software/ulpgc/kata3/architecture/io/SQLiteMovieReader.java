@@ -30,7 +30,7 @@ public class SQLiteMovieReader implements MovieReader, AutoCloseable {
     @Override
     public List<Movie> read() throws IOException {
         try {
-            ResultSet resultSet = connection.prepareStatement("SELECT * FROM movie").executeQuery();
+            ResultSet resultSet = connection.prepareStatement("SELECT * FROM movies").executeQuery();
             List<Movie> movies = new ArrayList<>();
             while (resultSet.next()) {
                 String id = resultSet.getString(1);
